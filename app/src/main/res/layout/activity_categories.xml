@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Categories"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/linear"
+        android:fontFamily="@font/bitter"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Select the Questions Category"
+        android:textColor="#1B0000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnGk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="General Knowledge"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnBooks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Entertainment : Books"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnFilm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Entertainment : film"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnMusic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Entertainment : Music"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnMusical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Entertainment : Musicals and Theaters"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnTelevision"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Entertainment : Television"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnVideoGame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Entertainment : Video Games"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnBoradGame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Entertainment : Board Games"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnNature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Science and Nature"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnComputers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Science : Computers"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnMath"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Science : Mathematics"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnMytho"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Mythology"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnSports"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Sports"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnGeography"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Geography"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="History"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnPolitical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Politics"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnArt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Art"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnCelebrities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Celebrities"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnAnimals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Animals"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnVehicles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Vehicles"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnGadget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Science : Gadgets"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnCartoon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Entertainment : Cartoon and Animations"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnComics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/autour_one"
+                android:onClick="sendUrl"
+                android:text="Entertainment ; Comics"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
