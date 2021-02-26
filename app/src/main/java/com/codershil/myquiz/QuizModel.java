@@ -24,7 +24,7 @@ public class QuizModel {
         byte[] option2 = Base64.decode( optionsArray.getString(1), Base64.DEFAULT);
         byte[] option3 = Base64.decode( optionsArray.getString(2), Base64.DEFAULT);
 
-        incorrectAnswers[0] = new String(option1, StandardCharsets.UTF_8);
+        incorrectAnswers[0] =  new String(option1, StandardCharsets.UTF_8);
         incorrectAnswers[1] =  new String(option2, StandardCharsets.UTF_8);
         incorrectAnswers[2] =  new String(option3, StandardCharsets.UTF_8);
     }

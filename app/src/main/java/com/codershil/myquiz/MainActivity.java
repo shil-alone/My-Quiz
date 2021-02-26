@@ -35,6 +35,7 @@ import java.util.Collections;
 public class MainActivity extends AppCompatActivity {
 
     int NO_OF_QUESTIONS=10 ;
+    final int USER_PROGRESS = (int) Math.ceil(100.0/NO_OF_QUESTIONS);
     int mQuestionIndex ;
     int score ;
 
@@ -43,6 +44,35 @@ public class MainActivity extends AppCompatActivity {
 
     QuizModel[] mQuizModel = new QuizModel[NO_OF_QUESTIONS] ;
 
+
+    TextView txtQuestion , txtScore ,txtResponse;
+    Button   btnFirst , btnSecond, btnThird , btnFourth ;
+    ProgressBar mProgressBar ,mProgressBarLoad;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        loadQuestions();
+        initializeViews();
+    }
+
+    public void initializeViews(){
+        txtQuestion = findViewById(R.id.question);
+        txtScore = findViewById(R.id.score);
+        txtResponse = findViewById(R.id.response);
+        btnFirst = findViewById(R.id.option1);
+        btnSecond = findViewById(R.id.option2);
+        btnThird = findViewById(R.id.option3);
+        btnFourth = findViewById(R.id.option4);
+        mProgressBar = findViewById(R.id.progressBar);
+        mProgressBarLoad = findViewById(R.id.progressBar2);
+        mProgressBarLoad.setVisibility(View.VISIBLE);
+
+        correct_sound = MediaPlayer.create(this,R.raw.correct_sound);
+        wrong_sound = MediaPlayer.create(this,R.raw.wrong_sound);
+    }
 
     /**
      * json object request from api and storing the data from json ;
@@ -77,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
                                 // creating the QuizModel class object and passing arguments to constructor
                                 mQuizModel[i] = new QuizModel(onlineQuestion,correctOption,optionsArray);
                                 mProgressBarLoad.setVisibility(View.GONE);
-
                             }
                         }
 
@@ -85,13 +114,11 @@ public class MainActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-
                         txtQuestion.setText(mQuizModel[0].getQuestion());
                         btnFirst.setText(mQuizModel[0].getIncorrectAnswers(0));
                         btnSecond.setText(mQuizModel[0].getIncorrectAnswers(1));
                         btnThird.setText(mQuizModel[0].getAnswer());
                         btnFourth.setText(mQuizModel[0].getIncorrectAnswers(2));
-
 
                         btnFirst.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -102,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
                                 updateOptions();
                             }
                         });
-
                         btnSecond.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -112,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
                                 updateOptions();
                             }
                         });
-
                         btnThird.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -122,7 +147,6 @@ public class MainActivity extends AppCompatActivity {
                                 updateOptions();
                             }
                         });
-
                         btnFourth.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -138,51 +162,18 @@ public class MainActivity extends AppCompatActivity {
 
                         new Response.ErrorListener() {
 
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainActivity.this, "check your internet connection", Toast.LENGTH_SHORT).show();
-                        mProgressBarLoad.setVisibility(View.GONE);
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(MainActivity.this, "check your internet connection", Toast.LENGTH_SHORT).show();
+                                mProgressBarLoad.setVisibility(View.GONE);
 
-                    }
-                });
+                            }
+                        });
 
         // Add the request to the RequestQueue using singleton class
         MySingleTon.getInstance(this).addToRequestQue(jsonObjectRequest);
 
     }
-
-
-   final int USER_PROGRESS = (int) Math.ceil(100.0/NO_OF_QUESTIONS);
-
-    TextView txtQuestion , txtScore ,txtResponse;
-    Button   btnFirst , btnSecond, btnThird , btnFourth ;
-    ProgressBar mProgressBar ,mProgressBarLoad;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        loadQuestions();
-        initializeViews();
-    }
-
-    public void initializeViews(){
-        txtQuestion = findViewById(R.id.question);
-        txtScore = findViewById(R.id.score);
-        txtResponse = findViewById(R.id.response);
-        btnFirst = findViewById(R.id.option1);
-        btnSecond = findViewById(R.id.option2);
-        btnThird = findViewById(R.id.option3);
-        btnFourth = findViewById(R.id.option4);
-        mProgressBar = findViewById(R.id.progressBar);
-        mProgressBarLoad = findViewById(R.id.progressBar2);
-        mProgressBarLoad.setVisibility(View.VISIBLE);
-
-        correct_sound = MediaPlayer.create(this,R.raw.correct_sound);
-        wrong_sound = MediaPlayer.create(this,R.raw.wrong_sound);
-    }
-
 
     public void updateQuestion(){
 
