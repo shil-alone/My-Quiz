@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
     QuizModel[] mQuizModel = new QuizModel[NO_OF_QUESTIONS] ;
 
-
     TextView txtQuestion , txtScore ,txtResponse;
     Button   btnFirst , btnSecond, btnThird , btnFourth ;
     ProgressBar mProgressBar ,mProgressBarLoad;
